@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_project
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "project&123"
+      MYSQL_DATABASE: "project"
+      MYSQL_USER: "project"
+      MYSQL_PASSWORD: "project&123"
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_project_data:/var/lib/mysql
+
+volumes:
+  mysql_project_data:
